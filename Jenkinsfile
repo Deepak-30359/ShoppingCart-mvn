@@ -7,8 +7,8 @@ pipeline {
         withMaven(maven : 'Maven3.8') {
             sh 'mvn clean compile'
             }
-          }
-        }
+         }
+    }
         stage('Testing Stage') {
             steps{
             withMaven(maven : 'Maven3.8') {
@@ -18,11 +18,11 @@ pipeline {
                   }
 
         stage('Deployment Stage') {
-                    steps{
+             steps{
                     withMaven(maven : 'Maven3.8') {
                                 sh 'mvn deploy'
                                  }
-                              }
-                          }
-                      }
-                  }
+                    }
+             }
+        }
+    }
