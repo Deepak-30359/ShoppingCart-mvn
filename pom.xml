@@ -19,20 +19,6 @@
     </plugins>
   </build>
   <packaging>jar</packaging>
-  <profiles>
-    <profile>
-      <id>sonar</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <properties>
-        <!-- Optional URL to server. Default value is http://localhost:9000 -->
-        <sonar.host.url>
-          http://localhost:9000
-        </sonar.host.url>
-      </properties>
-    </profile>
-  </profiles>
 
   <name>OnlineShoppingApplication</name>
   <url>http://maven.apache.org</url>
@@ -43,6 +29,12 @@
   </properties>
 
   <dependencies>
+    <!--<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency> -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
@@ -52,14 +44,8 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <version>2.7.3</version>
-      <scope>test</scope>
     </dependency>
-    <!-- https://medium.com/knoldus/how-to-integrate-your-maven-project-with-sonarqube-79f7368f8c7a -->
-    <dependency>
-      <groupId>org.sonarsource.scanner.maven</groupId>
-      <artifactId>sonar-maven-plugin</artifactId>
-      <version>3.8.0.2131</version>
-    </dependency>
+
     <dependency>
       <groupId>io.springfox</groupId>
       <artifactId>springfox-swagger-ui</artifactId>
@@ -81,11 +67,22 @@
       <version>2.7.3</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.jenkins-ci.main/jenkins-core -->
+
+
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-validation</artifactId>
       <version>2.7.3</version>
     </dependency>
+
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+
 
     <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
     <dependency>
@@ -94,12 +91,12 @@
       <version>42.2.3</version>
     </dependency>
     <dependency>
-      <groupId>io.springfox</groupId>
-      <artifactId>springfox-boot-starter</artifactId>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-deploy-plugin</artifactId>
       <version>3.0.0</version>
     </dependency>
   </dependencies>
-  <repositories>
+ <repositories>
     <repository>
       <id>clojars</id>
       <name>Clojars</name>
